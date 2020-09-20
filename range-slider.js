@@ -11,17 +11,14 @@ document.addEventListener('DOMContentLoaded', initRangeColorTooltip);
 document.addEventListener('DOMContentLoaded', ieTooltips);
 
 function ieTooltips() {
-    console.log("pocetak");
     if (!document.documentMode) {
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "block";
-            console.log("NIJE IE, mamu mu jebem");
         }
-    }else{
+    } else {
         console.log(tooltips, "noa");
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "none";
-            console.log("IE, mamu mu jebem");
         }
     }
 }
@@ -95,7 +92,7 @@ function sliderDays(e) {
     potentialPayout();
 }
 
-
+// Potential Patout Output
 function potentialPayout() {
     depositVal = document.getElementsByClassName("calc-range__deposit__slider")[0].value;
     timeVal = document.getElementsByClassName("calc-range__time__slider")[0].value;
