@@ -15,13 +15,11 @@ function ieTooltips() {
     if (!document.documentMode) {
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "block";
-            console.log("NIJE IE, mamu mu jebem");
         }
     }else{
         console.log(tooltips, "noa");
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "none";
-            console.log("IE, mamu mu jebem");
         }
     }
 }
