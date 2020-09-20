@@ -1,0 +1,568 @@
+// Variables
+$white: #ffffff;
+$dark: #121142;
+$dark-blue: #100e61;
+$green: #3CD0D9;
+$blue: #3875EF;
+$light-grey:rgba(18, 17, 66, .25);
+$bg-grey: rgba(18, 17, 66, 0.07);
+
+// Base & reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove Arrows/Spinners */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+// Typography
+@font-face {
+    font-family: 'poppins-medium';
+    src: url('../fonts/Poppins-Medium.eot');
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2'),
+        url('../fonts/Poppins-Medium.woff') format('woff'),
+        url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins-regular';
+    src: url('../fonts/Poppins-Regular.eot');
+    src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../fonts/Poppins-Regular.woff') format('woff'),
+        url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: poppins-regular;
+}
+
+// Utilities - height helper
+.height-helper{
+    min-height: 40px;
+    display: inline;
+    vertical-align: -moz-middle-with-baseline;
+}
+
+// Range-slider
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 100%;
+    transition: .2s;
+    position: relative;
+    z-index: 10;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border: 0;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 20;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    background-image: url("./../assets/mdi_unfold_more.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    border: 1px solid rgba(18, 17, 66, 0.2);
+    box-shadow: 0px 15px 30px rgba(18, 17, 66, 0.1);
+    cursor: pointer;
+    margin-top: -14px;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    background: #FFFFFF;
+    background-image: url(./../assets/mdi_unfold_more.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    border: 1px solid rgba(18, 17, 66, 0.2);
+    box-shadow: 0px 15px 30px rgba(18, 17, 66, 0.1);
+    cursor: pointer;
+    margin-top: -14px;
+}
+
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: rgba(18, 17, 66, 0.2);
+}
+
+input[type=range]::-moz-range-track+span.current-value-box__num {
+    border: 30px solid red;
+}
+
+input[type=range]::-moz-range-progress {
+    background-color: $blue;
+    height: 4px;
+}
+
+input[type=range].custom-range-slider::-ms-track {
+    background-image: none;
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    //   border-color: rgba(18, 17, 66, 0.2);;
+    background: transparent;
+    ;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 15px 0;
+    ;
+    /*remove default tick marks*/
+    color: transparent;
+    overflow: visible;
+}
+
+input[type=range].custom-range-slider::-ms-thumb {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    background: #FFFFFF;
+    background-image: url(./../assets/mdi_unfold_more.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    border: 1px solid rgba(18, 17, 66, 0.2);
+    box-shadow: 0px 15px 30px rgba(18, 17, 66, 0.1);
+    cursor: pointer;
+    margin-top: 0px;
+    transform: scale(1) !important;
+    z-index: 20;
+}
+
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-lower {
+    background: #3875EF;
+    border: 0 solid transparent;
+}
+
+input[type=range]::-ms-fill-upper,
+input[type=range]:focus::-ms-fill-upper {
+    background: rgba(18, 17, 66, 0.2);
+    border: 0 solid transparent;
+}
+
+// Button
+.btn{
+    width: 100%;
+    line-height: 50px;
+    padding: 0 20px;
+    color: $white;
+    font-family: poppins-medium;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(0, 119, 126, 0.75);
+    border: none;
+    border-radius: 25px;
+    transition: .15s ease;
+    &--green{
+        background-color: $green;
+    }
+    &:hover{
+        filter: brightness(105%);
+        cursor: pointer;
+    }
+    &:focus{
+        outline: 0;
+    }
+}
+
+// Profit-calculator
+.profit-calc {
+    margin: 0;
+    padding: 50px 16px 16px;
+    font-family: poppins-regular;
+    background-color: $white;
+
+    &__title {
+        font-size: 32px;
+        line-height: 1.25;
+        color: $dark;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__txt {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $dark;
+        opacity: .5;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .calc-box {
+        display: block;
+    }
+
+    .calc-payout {
+        color: $white;
+        background: $blue;
+        padding: 30px 20px 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 15px 30px rgba(18, 17, 66, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .logo-circle {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background-color: $green;
+    }
+
+    .payout-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__title {
+            font-family: poppins-medium;
+            font-size: 14px;
+            line-height: 1.43;
+
+        }
+
+        &__icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: rgba(255,255,255,.15);
+            display: flex;
+            justify-content: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            align-items: center;
+            img{
+                filter: drop-shadow(0px 10px 10px rgba(2, 28, 120, 0.15));
+            }
+        }
+        &__icon1 {
+            width: 48px;
+            height: 48px;
+            overflow: hidden;
+        }
+
+        &__amount {
+            font-family: poppins-regular;
+            font-size: 28px;
+            line-height: 1.14;
+            margin-bottom: 20px;
+        }
+    }
+
+    color: $dark;
+
+    .calc-range {
+        padding: 30px 20px 20px;
+        background-color: $white;
+        box-shadow: 0px 15px 30px rgba(18, 17, 66, 0.1);
+        border-radius: 10px;
+
+        &__deposit {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        &__time {
+            position: relative;
+        }
+
+        &__title {
+            display: inline-block;
+            font-family: poppins-medium;
+            font-size: 21px;
+            position: relative;
+            bottom: 1px;
+
+        }
+
+        &-input {
+            display: inline-block;
+            color: $dark;
+            position: relative;
+            top: 1px;
+            margin-left: 20px;
+
+            span {
+                font-size: 16px;
+                line-height: 51px;
+                position: absolute;
+                display: inline-block;
+                opacity: .5;
+
+                &.currency {
+                    left: 5px;
+                    top: -1px;
+                }
+
+                &.time-unit {
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            input {
+                font-family: poppins-regular;
+                font-size: 16px;
+                color: $dark-blue;
+                display: inline-block;
+                height: 50px;
+                line-height: 51px;
+                border: 0px;
+                outline: 0px;
+                width: auto;
+                caret-color: $blue;
+                cursor: pointer;
+                border-bottom: 1px solid rgba(18, 17, 66, 0.2);
+
+                &:focus, &:hover {
+                    border-bottom: 1px solid $blue;
+                    background: $bg-grey;
+                }
+
+                &.calc-range-input__deposit {
+                    padding-left: 20px;
+                    max-width: 60px;
+                }
+
+                &.calc-range-input__time {
+                    max-width: 73px;
+                    padding-right: 45px;
+                    text-align: right;
+                }
+            }
+
+            &__deposit {
+                line-height: 51px;
+            }
+
+            &__time {
+                line-height: 51px;
+            }
+        }
+    }
+
+    .slider-values {
+        position: absolute;
+        font-family: poppins-medium;
+        font-size: 14px;
+        top: 69px;
+        opacity: .25;
+        line-height: 1;
+
+        &.slider-min {
+            left: 0px;
+        }
+
+        &.slider-max {
+            right: 0px;
+        }
+    }
+
+    .flexr-btw {
+        display: inline-block;
+        border-bottom: 1px solid rgba(18, 17, 66, 0.2);
+        box-sizing: border-box;
+        margin-bottom: 26px;
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        ;
+    }
+
+    input:not(:hover)+.current-value-box {
+        opacity: 0;
+        pointer-events: none;
+
+        .current-value-box__num {
+            bottom: 41px;
+            transition: bottom .25s ease;
+        }
+    }
+
+    .current-value-box {
+        display: block;
+        width: calc(100% - 32px);
+        padding: 0 16px;
+        position: relative;
+        left: 16px;
+        opacity: 1;
+        transition: opacity .2s ease-in;
+        padding: 0 10px;
+        top: 95px;
+        position: absolute;
+
+        &__num {
+            display: inline-block;
+            background-color: $dark;
+            border-radius: 10px;
+            color: $white;
+            text-align: center;
+            line-height: 1;
+            padding: 6px 10px;
+            position: absolute;
+            bottom: 36px;
+            font-size: 20px;
+            transition: bottom .25s ease-in-out;
+            white-space: nowrap;
+            filter: drop-shadow(0px 15px 30px rgba(18, 17, 66, 0.1));
+
+            &:before {
+                position: absolute;
+                content: "";
+                width: 17px;
+                height: 17px;
+                border-radius: 4px;
+                background-color: $dark;
+                bottom: -3px;
+                left: 50%;
+                transform: translate(-50%) rotate(45deg);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .profit-calc {
+        padding-bottom: 270px;
+        height: 100%;
+        min-height: 100vh;
+        background-image: url(./../assets/bg-ellipse.svg);
+        background-repeat: no-repeat;
+        background-position: center top -300px;
+        padding: 200px 40px 40px;
+
+        &__title {
+            font-size: 54px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+
+        &__txt {
+            margin-bottom: 70px;
+        }
+
+        .calc-box {
+            padding-bottom: 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+            >* {
+                width: 100%;
+            }
+
+            .calc-payout {
+                padding: 30px;
+                max-width: 400px;
+                min-width: 300px;
+                margin-right: 40px;
+                margin-bottom: 0;
+            }
+
+            .calc-range {
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 32px;
+                max-width: 100%;
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    height: 10px;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: $blue;
+                    border-radius: 10px 10px 0 0;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .payout-box {
+            &__amount {
+                font-size: 54px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .profit-calc {
+        background-position: right -185px top -200px;
+
+        .calc-box {
+            .calc-payout {
+                min-width: 400px;
+                padding: 30px 40px 40px;
+            }
+
+            .calc-range {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+        .payout-box {
+            &__amount {
+                font-size: 74px;
+            }
+            &__icon{
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+}
