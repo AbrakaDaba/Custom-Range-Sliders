@@ -15,11 +15,13 @@ function ieTooltips() {
     if (!document.documentMode) {
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "block";
+            console.log("NIJE IE, mamu mu jebem");
         }
     }else{
         console.log(tooltips, "noa");
         for (i = 0; i < tooltips.length; i++) {
             tooltips[i].style.display = "none";
+            console.log("IE, mamu mu jebem");
         }
     }
 }
@@ -28,7 +30,7 @@ function ieTooltips() {
 function initRangeColorTooltip() {
     for (i = 0; i < rangeInputs.length; i++) {
         if (browserCheck) {
-            rangeInputs[i].style.background = 'linear-gradient(to right, #3875EF 0%, #3875EF ' + (rangeInputs[i].value - rangeInputs[i].min) / (rangeInputs[i].max - rangeInputs[i].min) * 100 + '%, rgba(18, 17, 66, 0.2) ' + (rangeInputs[i].value - rangeInputs[i].min) / (rangeInputs[i].max - rangeInputs[i].min) * 100 + '%, rgba(18, 17, 66, 0.2) 100%)';
+            rangeInputs[i].style.background = 'linear-gradient(to right, #3CD0D9 0%, #3CD0D9 ' + (rangeInputs[i].value - rangeInputs[i].min) / (rangeInputs[i].max - rangeInputs[i].min) * 100 + '%, rgba(18, 17, 66, 0.2) ' + (rangeInputs[i].value - rangeInputs[i].min) / (rangeInputs[i].max - rangeInputs[i].min) * 100 + '%, rgba(18, 17, 66, 0.2) 100%)';
 
         }
         rangeInputs[i].oninput = sliderColorAndTooltip;
@@ -51,7 +53,7 @@ function sliderColorAndTooltip() {
     var currentValueBox = this.nextElementSibling.getElementsByClassName("current-value-box__num")[0]
     var rangePercent = this.value;
     if (browserCheck) {
-        this.style.background = 'linear-gradient(to right, #3875EF 0%, #3875EF ' + (rangePercent - this.min) / (this.max - this.min) * 100 + '%, rgba(18, 17, 66, 0.2) ' + (rangePercent - this.min) / (this.max - this.min) * 100 + '%, rgba(18, 17, 66, 0.2) 100%)';
+        this.style.background = 'linear-gradient(to right, #3CD0D9 0%, #3CD0D9 ' + (rangePercent - this.min) / (this.max - this.min) * 100 + '%, rgba(18, 17, 66, 0.2) ' + (rangePercent - this.min) / (this.max - this.min) * 100 + '%, rgba(18, 17, 66, 0.2) 100%)';
     }
     currentValueBox.style.transform = "translateX(-50%)";
     currentValueBox.style.left = 100 / this.max * rangePercent + "%";

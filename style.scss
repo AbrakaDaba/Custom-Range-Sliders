@@ -3,7 +3,7 @@ $white: #ffffff;
 $dark: #121142;
 $dark-blue: #100e61;
 $green: #3CD0D9;
-$blue: #3875EF;
+$blue: #4d5673;
 $light-grey:rgba(18, 17, 66, .25);
 $bg-grey: rgba(18, 17, 66, 0.07);
 
@@ -31,20 +31,20 @@ input[type=number] {
 // Typography
 @font-face {
     font-family: 'poppins-medium';
-    src: url('../fonts/Poppins-Medium.eot');
-    src: url('../fonts/Poppins-Medium.woff2') format('woff2'),
-        url('../fonts/Poppins-Medium.woff') format('woff'),
-        url('../fonts/Poppins-Medium.ttf') format('truetype');
+    src: url('./fonts/Poppins-Medium.eot');
+    src: url('./fonts/Poppins-Medium.woff2') format('woff2'),
+        url('./fonts/Poppins-Medium.woff') format('woff'),
+        url('./fonts/Poppins-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'poppins-regular';
-    src: url('../fonts/Poppins-Regular.eot');
-    src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
-        url('../fonts/Poppins-Regular.woff') format('woff'),
-        url('../fonts/Poppins-Regular.ttf') format('truetype');
+    src: url('./fonts/Poppins-Regular.eot');
+    src: url('./fonts/Poppins-Regular.woff2') format('woff2'),
+        url('./fonts/Poppins-Regular.woff') format('woff'),
+        url('./fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -91,7 +91,7 @@ input[type=range]::-webkit-slider-thumb {
     width: 32px;
     border-radius: 16px;
     background-color: #FFFFFF;
-    background-image: url("./../assets/mdi_unfold_more.svg");
+    background-image: url("./assets/mdi_unfold_more.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;
@@ -106,7 +106,7 @@ input[type=range]::-moz-range-thumb {
     width: 32px;
     border-radius: 16px;
     background: #FFFFFF;
-    background-image: url(./../assets/mdi_unfold_more.svg);
+    background-image: url(./assets/mdi_unfold_more.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;
@@ -156,7 +156,7 @@ input[type=range].custom-range-slider::-ms-thumb {
     width: 32px;
     border-radius: 16px;
     background: #FFFFFF;
-    background-image: url(./../assets/mdi_unfold_more.svg);
+    background-image: url(./assets/mdi_unfold_more.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;
@@ -170,7 +170,7 @@ input[type=range].custom-range-slider::-ms-thumb {
 
 input[type=range]::-ms-fill-lower,
 input[type=range]::-ms-fill-lower {
-    background: #3875EF;
+    background: #4d5673;
     border: 0 solid transparent;
 }
 
@@ -476,7 +476,7 @@ input[type=range]:focus::-ms-fill-upper {
         padding-bottom: 270px;
         height: 100%;
         min-height: 100vh;
-        background-image: url(./../assets/bg-ellipse.svg);
+        background-image: url(./assets/bg-ellipse.svg);
         background-repeat: no-repeat;
         background-position: center top -300px;
         padding: 200px 40px 40px;

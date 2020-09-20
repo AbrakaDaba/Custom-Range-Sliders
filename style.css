@@ -114,7 +114,7 @@ input[type=range]::-moz-range-track + span.current-value-box__num {
 }
 
 input[type=range]::-moz-range-progress {
-  background-color: #3875EF;
+  background-color: #4d5673;
   height: 4px;
 }
 
@@ -151,7 +151,7 @@ input[type=range].custom-range-slider::-ms-thumb {
 
 input[type=range]::-ms-fill-lower,
 input[type=range]::-ms-fill-lower {
-  background: #3875EF;
+  background: #4d5673;
   border: 0 solid transparent;
 }
 
@@ -221,7 +221,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .profit-calc .calc-payout {
   color: #ffffff;
-  background: #3875EF;
+  background: #4d5673;
   padding: 30px 20px 20px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -364,13 +364,13 @@ input[type=range]:focus::-ms-fill-upper {
   border: 0px;
   outline: 0px;
   width: auto;
-  caret-color: #3875EF;
+  caret-color: #4d5673;
   cursor: pointer;
   border-bottom: 1px solid rgba(18, 17, 66, 0.2);
 }
 
 .profit-calc .calc-range-input input:focus, .profit-calc .calc-range-input input:hover {
-  border-bottom: 1px solid #3875EF;
+  border-bottom: 1px solid #4d5673;
   background: rgba(18, 17, 66, 0.07);
 }
 
@@ -537,7 +537,7 @@ input[type=range]:focus::-ms-fill-upper {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #3875EF;
+    background-color: #4d5673;
     border-radius: 10px 10px 0 0;
     z-index: 1;
   }
